@@ -2,7 +2,10 @@
     <main>
         <section class="p-5 lg:px-16 lg:pt-10">
             <Navbar :single="true"></Navbar>
-                <div class="flex flex-col lg:flex-row gap-9 py-12">
+            <div v-if="loading">
+                <Loading></Loading>
+            </div>
+            <div v-else class="flex flex-col lg:flex-row gap-9 py-12">
                     <div class="mb-8 w-4/5">
                         <h1 class="font-sans text-2xl mb-4">{{ user?.name }}</h1>
                         <div>
@@ -64,10 +67,14 @@
 
 <script setup lang="ts">
 import { useFetchUserById } from '@/composables/getUserbyId';
+import { useUserStore } from '~/store/user'
 
+const store = useUserStore();
 const { fetchUser, user, loading } = useFetchUserById();
 
 fetchUser();
+
+store.addUserToStote(user)
 
 </script>
 

@@ -1,9 +1,6 @@
 import { userApiFactory } from "@/apiFactory/users";
 import { ref } from "vue";
 
-
-//cache user to store
-
 export const useFetchUserById = () => {
     const user = ref([]) as any;
     const userId = useRoute().params.id as string;
@@ -13,9 +10,9 @@ export const useFetchUserById = () => {
       try {
         const response = await userApiFactory.getUserById(userId);
         user.value = response.data;
-        console.log(user.value)
       } catch (error: any) {
-        useNuxtApp().$toast.error(error.message, {
+        let message = "this user not found please try again"
+        useNuxtApp().$toast.error(message, {
           autoClose: 5000,
           dangerouslyHTMLString: true,
         });

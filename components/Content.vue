@@ -29,8 +29,8 @@
             </div> 
         </div>
         <div class="w-full flex flex-col lg:flex-row items-start justify-between py-8 lg:py-32">
-            <div class="w-full lg:w-1/2 my-4">
-                <h3 class="text-[32px] font-mono mb-6">Discover a World of Users <br></br> Tailored Just for You.</h3>
+            <div class="w-full lg:w-2/5 my-4">
+                <h3 class="text-[32px] font-mono mb-6">Discover a World of Users Tailored Just for You.</h3>
                 <NuxtLink to="/users" class="py-2.5 px-6 bg-purple-2 text-white font-mono rounded-[10px] mb-2 lg:mb-0">View all users</NuxtLink>
             </div>
             <div class="flex flex-wrap gap-6 w-full">
@@ -45,8 +45,7 @@
                 <div class="relative text-white text-center">
                     <img src="../assets/images/hybrid-event.png" alt="hybrid-event">
                     <div class="absolute top-1/2 left-1/2 adjust text-2xl font-mono">Hybrid Users</div>
-                </div>
-                
+                </div>    
             </div>
         </div>
     </section>
